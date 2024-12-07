@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Admin Dashboard</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- Bootstrap Link -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+        <!-- Montserrat Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- Fontawesome Icon -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            .order-card {
+                color: #fff;
+            }
+
+            .bg-c-blue {
+                background: linear-gradient(45deg,#4099ff,#73b4ff);
+            }
+
+            .bg-c-green {
+                background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+            }
+
+            .bg-c-yellow {
+                background: linear-gradient(45deg,#FFB64D,#ffcb80);
+            }
+
+            .bg-c-pink {
+                background: linear-gradient(45deg,#FF5370,#ff869a);
+            }
+
+
+            .card {
+                border-radius: 5px;
+                -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+                box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+                border: none;
+                margin-bottom: 30px;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+            .card .card-block {
+                padding: 25px;
+            }
+
+            .order-card i {
+                font-size: 26px;
+            }
+
+            .f-left {
+                float: left;
+            }
+
+            .f-right {
+                float: right;
+            }
+        </style>
+        <div class="grid-container">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span></span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons-outlined">account_circle</span> Lilani Ranjan
+                </div>
+            </header>
+            <!-- End Header -->
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined"></span>EXPENSE MANAGER
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="index.html">
+                            <span class="material-icons-outlined">dashboard</span> Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="budgetManagement.html">
+                            <span class="material-icons-outlined">inventory_2</span> Budget Management
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="Transaction.html">
+                            <span class="material-icons-outlined">fact_check</span> Manage Transaction 
+                        </a>
+                    </li>
+                    <li class="disabled" style="padding: 45px 20px 20px 20px;">
+                        <a href="#" style="text-decoration: none; color: #9799ab; cursor: none;">
+                            REPORTS
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="ExpenseReport.html">
+                            <span class="material-icons-outlined">poll</span> Transaction Reports
+                        </a>
+                    </li>
+                    <li class="disabled" style="padding: 45px 20px 20px 20px;">
+                        <a href="#" style="text-decoration: none; color: #9799ab; cursor: none;">
+                            MAINTENANCE
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="Category.html">
+                            <span class="material-icons-outlined"><i class="fa fa-server" aria-hidden="true"></i></span> Category List
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+
+            <!-- Main -->
+            <main class="main-container">
+                <div class="main-cards">
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="textprimary">Total Amount :</p>
+                            <span class="material-icons-outlined text-blue ms-3"><i class="fa fa-credit-card" aria-hidden="true"></i></span>
+                        </div>
+                        <span class="textprimary font-weight-bold">Rs 49,000</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="textprimary">Total Income :</p>
+                            <span class="material-icons-outlined text-orange ms-3"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                        </div>
+                        <span class="textprimary font-weight-bold">Rs 42,555</span>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-inner">
+                            <p class="textprimary">Total Expense :</p>
+                            <span class="material-icons-outlined text-green ms-3"><i class="fa fa-suitcase" aria-hidden="true"></i></span>
+                        </div>
+                        <span class="textprimary font-weight-bold">Rs 5,300</span>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="main-title">
+                    <p class="font-weight-bold">CURRENT BUDGET IN EACH CATEGORIES</p>
+                </div>
+                <!--SearchBar start-->
+                <div>
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="search">
+                            <input type="text" class="search-input" placeholder="search..." name="">
+                            <a href="#" class="search-icon">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!--SearchBar End-->
+
+                <!--Below Card Start-->
+                <div>
+                    <div class="container">
+                        <div class="row my-3">
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-blue order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Electricity</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-cart-plus f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 5,000</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-green order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Main Budget</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-rocket f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 30,555</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-yellow order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Maintenance</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 4,700</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-pink order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Others</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 6,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-yellow order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Water</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-refresh f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 3,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 col-xl-3">
+                                <div class="card bg-c-pink order-card">
+                                    <div class="card-block">
+                                        <h5 class="m-b-20">Food</h5>
+                                        <!--<h2 class="text-right"><i class="fa fa-credit-card f-left"></i><span>486</span></h2>-->
+                                        <!--<p class="m-b-0">Completed Orders<span class="f-right">351</span></p>-->
+                                        <span class="f-right">Rs 10,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Below Card End-->
+            </main>
+            <!-- End Main -->
+
+        </div>
+
+        <!-- Scripts -->
+        <!-- ApexCharts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+    </body>
+</html>
